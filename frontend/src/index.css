@@ -1,9 +1,56 @@
+/* Staatliches Regular */
+@font-face {
+  font-family: 'Staatliches';
+  src: url('./fonts/Staatliches-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Helvetica Condensed */
+@font-face {
+  font-family: 'Helvetica Condensed';
+  src: url('./fonts/helvetica_condensed.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Helvetica Neue (Regular and Bold) */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./fonts/Helvetica.ttc') format('truetype');
+  font-weight: 400; /* Regular weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./fonts/Helvetica.ttc') format('truetype');
+  font-weight: bold; /* Bold weight */
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+* {
+  box-sizing: border-box;
+}
+
+.section, .slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --title-font: 'Staatliches', sans-serif;
+  --subtitle-font: 'Helvetica Condensed', sans-serif;
+  --regular-font: 'Helvetica Neue', Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -17,6 +64,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #F2ECE9; /* Adjust to match your color scheme */
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it's above the fullPage content */
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,10 +86,36 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  overflow-x: hidden;
   min-width: 320px;
   min-height: 100vh;
+  font-family: var(--regular-font);
+}
+
+/* Title (Luis Carvalho) */
+.title {
+  font-family: var(--title-font);
+  font-size: 4rem; /* Adjust as needed */
+}
+
+.subtitle {
+  font-family: var(--subtitle-font);
+  font-size: 2rem; /* Adjust as needed */
+}
+
+.section-title {
+  font-family: var(--title-font);
+  font-size: 3rem; /* Adjust as needed */
+}
+
+.section-subtitle {
+  font-family: var(--regular-font);
+  font-weight: bold; /* Use the bold version of Helvetica Neue */
+  font-size: 1.5rem; /* Adjust as needed */
+}
+
+.regular-text {
+  font-family: var(--regular-font);
 }
 
 h1 {
